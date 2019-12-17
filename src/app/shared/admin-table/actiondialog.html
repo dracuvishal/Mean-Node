@@ -1,0 +1,17 @@
+<div class="row">
+
+
+    <div>
+        <div *ngFor="let lable of lableKeys;let i=index">
+            <h5>{{lable}}</h5>
+            <input type="text" [attr.disabled]= "i==0 ? '' : null"[(ngModel)]="data.Formdata[lable]">
+            <br>
+        </div>
+        <div class="row" style=" margin: auto;">
+                <button (click)="Save()">Save</button>
+            </div>
+    </div>
+
+
+
+</div>

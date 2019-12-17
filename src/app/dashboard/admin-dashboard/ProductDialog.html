@@ -1,0 +1,29 @@
+
+<div>
+    <form [formGroup]="ProductForm" >
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Product Name" formControlName="productname">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Product cost" formControlName="productcost">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Product desc" formControlName="productdesc">
+          </mat-form-field>
+      
+      </form>
+
+      <div>
+            <div>
+                    <input type="file" name="product" (change)="onFileSelect($event)" />
+            </div>
+            <p>{{filename}}</p>
+      </div>
+
+      <div>
+         <button (click)="createProduct()">Create a Product</button> 
+      </div>
+</div>

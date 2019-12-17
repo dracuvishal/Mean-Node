@@ -1,0 +1,27 @@
+.round3 {
+    border:5px solid floralwhite;
+    border-radius: 12px;
+  }
+  .pagination{
+    height: 40px;
+    width: 190px;
+    margin-left: 80%;
+    margin-top: 1%;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 5.25rem;
+  }
+  .prev{
+    width: 40px;
+    border: 2px solid #dee2e6;
+    border-radius: 15px;
+    text-align: center;
+  }
+  .nxt{
+    width: 40px;
+    border: 2px solid #dee2e6;
+    border-radius: 15px;
+    text-align: center;
+  }

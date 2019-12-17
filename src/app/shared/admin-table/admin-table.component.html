@@ -1,0 +1,31 @@
+
+<div class="row">
+
+        <div >
+    
+            <table style="width:135%">
+    
+                <thead>
+    
+                    <tr>
+                        <th *ngFor="let head of headeritems ">{{head}}</th>
+                    </tr>
+    
+                </thead>
+    
+                <tbody>
+    
+                    <tr *ngFor="let rowdata of tabledata">
+                        <td *ngFor="let coldata of headeritems">{{rowdata[coldata]}}</td>
+                        <td *ngIf="edit"><span><button (click)='edituser(rowdata)'>Edit</button></span></td>
+                        <td *ngIf="delete"><span><button (click)='deleteuser(rowdata)'>Delete</button></span></td>
+                    </tr>
+    
+                </tbody>
+    
+            </table>
+    
+        </div>
+    
+    
+    </div>

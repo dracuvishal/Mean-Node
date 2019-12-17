@@ -1,0 +1,12 @@
+
+.admintable{
+    overflow-y: auto;
+overflow-x: hidden;
+height: 538px;
+/* top: 35%; */
+width: 71%;
+/* left: 30%; */
+/* margin-left: 8%; */
+/* margin-top: 50px; */
+margin: 181px;
+}

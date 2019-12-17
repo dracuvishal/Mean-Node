@@ -1,0 +1,39 @@
+<div id="mydiv" class="row">
+
+    <mat-card >
+
+        <mat-card-header>
+
+            Welcome Admin
+        </mat-card-header>
+
+        <mat-card-content>
+
+            <div>
+                <form [formGroup]="AdminForm">
+
+                    <div class="example-container">
+
+                        <mat-form-field>
+                            <input type="text" matInput placeholder="Email" formControlName="email">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input type="password" matInput placeholder="Password" formControlName="password">
+                        </mat-form-field>
+
+                    </div>
+
+                </form>
+
+                <div>
+                    <button (click)="adminLogin()">Login</button>
+                </div>
+
+            </div>
+        </mat-card-content>
+
+
+    </mat-card>
+
+</div>

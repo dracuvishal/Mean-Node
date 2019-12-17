@@ -1,0 +1,80 @@
+<!-- <div  class="row" *ngIf="tableData.length==0">
+    <mat-spinner></mat-spinner>
+</div> -->
+<div>
+
+    <div>
+
+        <div class="row">
+
+            <div class="col-sm-3 round3" style="height: 500px;">
+
+                <div class="row card" style="height: -webkit-fill-available; ">
+
+                    <div class="row" style="height: 86px;margin-left: 17%;">
+                        <p class="font-weight-bold">Apply Filters</p>
+                    </div>
+
+                    <div class="row" style="margin-left: 17%;">
+                        <mat-form-field>
+                            <mat-label>selcet price filter</mat-label>
+                            <mat-select [(value)]="priceSelected">
+                                <mat-option *ngFor="let price of priceFilter" [value]="price.value">
+                                    {{price.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="row" style="margin-left: 17%;">
+                        <button type="button" class="btn btn-outline-primary" (click)="applyFilter(priceSelected)">Apply</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-8 round3" style=" margin-left: 3%;height: 670px; overflow-y:auto; 
+            overflow-x:hidden; ">
+
+                <table>
+
+                    <tr *ngFor="let row of tableData">
+
+                        <div class="row">
+
+                            <div class="col-sm-4" style="width: 430px;height: 348px;" *ngFor="let item of row">
+                                <div class="card">
+                                    <img class="card-img-top" src="{{item.image}}" alt="Card image">
+                                    <div class="card-body">
+                                        <p style="text-align: center;"> <b>{{item.itemname}}</b> </p>
+                                        <p><b style="font-weight: 500;">Description -</b> {{item.details}} </p>
+                                        <p><b style="font-weight: 500;">Cost -</b> {{item.itemcost}} Rs</p>
+                                        <button (click)="additem(item)">Add</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <br>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="row" style="height: 50px;">
+            <div class="pagination">
+                <div type="button" (click)="clickprev()" class="prev"><p><<</p></div>
+                <div style="width: 188px;">
+                    <button *ngFor="let page of pagination" style="margin: 4px;width: 34px;" (click)="selectedpage(page)">{{page}}</button>
+                </div>
+                <div (click)="clicknext()" type="button" class="nxt"><p>>></p></div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

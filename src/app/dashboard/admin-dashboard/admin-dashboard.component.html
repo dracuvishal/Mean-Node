@@ -1,0 +1,37 @@
+<div class="row">
+
+        <div class="col-sm-2">
+                <div>
+                        <button (click)="adminlogOut()">Logout</button>
+                </div>
+                <br>
+                <div *ngIf="!IsUser">
+                        <button (click)="GetAllUsers()"> SEE ALL USERS</button>
+                </div>
+                <br>
+                <div *ngIf="IsUser">
+                        <button (click)="GetAllItems()"> SEE ALL ITEMS</button>
+                </div>
+                <br>
+                <div>
+                        <button (click)="addProduct()">
+                                Add Product
+                        </button>
+                </div>
+                <br>
+        </div>
+
+
+        <div class="col-sm-10">
+
+                <app-admin-table
+                 [headeritems]='headerData'
+                  [tabledata]='tableData'
+                   [edit]='IsEdit'
+                    [delete]='IsDelete'
+                        [isUsers]='IsUser' 
+                        (adminEmitter)="admintableEmit($event)">
+                </app-admin-table>
+        </div>
+
+</div>

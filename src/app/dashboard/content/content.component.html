@@ -1,0 +1,54 @@
+<p>content works!</p>
+
+
+
+
+<div class="row">
+        <button  style="margin-left: 93%;" type="button" class="btn btn-secondary" (click)="logout()">Logout</button>
+    <div style="height: 160px;margin: 1%;width: 100%;">
+
+        <div class="row" style="background-color:tan;">
+
+            <div>
+                <img style="width: 77%;" src="../../../assets/images/logo.png" class="rounded">
+            </div>
+            
+        </div>
+
+
+    </div>
+    <div *ngIf="userData?.length>0" >
+        <app-single-data-view 
+
+        [tableData]="userData" 
+        (paginationEmit)="tablePagination($event)"
+        >
+
+        </app-single-data-view>
+        
+    </div>
+
+    <div *ngIf="userData?.length==0">
+        <div class="row">
+            <div>
+                
+            </div>
+        </div>
+    </div >
+
+
+    <div style="height: 160px;margin: 1%;width: 100%;">
+
+        <div class="row jumbotron text-center" style="background-color:tan;">
+
+            <div class="row">
+               
+
+            </div>
+         
+        </div>
+
+
+    </div>
+
+</div>

@@ -1,0 +1,104 @@
+<div style="display: block;" class="row">
+
+    <img style="height: fit-content;width: 57%;float: left;" src="../assets/images/login-background.jpg" alt="">
+
+    <mat-card class="example-card">
+
+        <mat-card-header>
+
+            <div class="row">
+                <mat-card-title class="col-sm-8" *ngIf="!opensignup">ACCOUNT LOGIN</mat-card-title>
+                <mat-card-title class="col-sm-8"  *ngIf="opensignup">ACCOUNT SIGNUP</mat-card-title>
+                <div class="col-sm-4">
+                    <a (click)="Adminlogin()" ><img style="width: 46px;margin-left: 69px;" src="../../../assets/images/admin.PNG" alt=""></a>
+                </div>  
+                
+            </div>
+      
+          
+
+
+        </mat-card-header>
+
+        <mat-card-content>
+
+            <div *ngIf="!opensignup">
+                <form [formGroup]="loginForm">
+
+                    <div class="example-container">
+
+                        <mat-form-field>
+                            <input type="text" matInput placeholder="Username" formControlName="username">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input type="password" matInput placeholder="Password" formControlName="password">
+                        </mat-form-field>
+
+                    </div>
+
+                </form>
+            </div>
+
+
+            <div *ngIf="opensignup">
+
+                <form [formGroup]="signUpForm">
+
+                    <div class="example-container">
+
+                        <mat-form-field>
+                            <input type="text" matInput placeholder="Username" formControlName="username">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input type="text" matInput placeholder="Email" formControlName="email">
+                        </mat-form-field>
+
+
+                        <mat-form-field>
+                            <input type="password" matInput placeholder="Password" formControlName="password">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input type="number" matInput placeholder="Mobile" formControlName="mobile">
+                        </mat-form-field>
+
+                    </div>
+
+                </form>
+            </div>
+
+
+        </mat-card-content>
+
+        <div class="row">
+
+            <div class="example-button-row col-sm-6" *ngIf="!opensignup">
+                <button mat-button (click)="userLogin()">login</button>
+            </div>
+
+
+            <div class="example-button-row btn btn-primary col-sm-6" *ngIf="!opensignup">
+                <button mat-button (click)="createNew()">Create New Account</button>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="example-button-row col-sm-6" *ngIf="opensignup">
+                <button mat-button (click)="userSignUp()">SignUp</button>
+            </div>
+
+            <div class="example-button-row col-sm-6 btn btn-info" *ngIf="opensignup ">
+                <button mat-button (click)="opensignup=false">Already user</button>
+            </div>
+
+        </div>
+
+
+
+    </mat-card>
+
+</div>
