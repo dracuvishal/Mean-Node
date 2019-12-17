@@ -1,0 +1,15 @@
+node{
+
+        stage('Checkout SCM'){
+            git branch:'master', url:'https://github.com/dracuvishal/Mean-Node.git'
+        }
+
+        stage('install nodemodules'){
+            sh "npm install"
+        }
+
+        stage('building the app'){
+            sh "ng build --prod"
+        }
+
+}
