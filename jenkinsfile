@@ -1,15 +1,12 @@
-node{
+#!/usr/bin/env groovy
 
-        stage('Checkout SCM'){
-            git branch:'master', url:'https://github.com/dracuvishal/Mean-Node.git'
+pipeline {
+    agent { docker { image 'node:6.3' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'npm --version'
+            }
         }
-
-        stage('install nodemodules'){
-            sh "npm install"
-        }
-
-        stage('building the app'){
-            sh "ng build --prod"
-        }
-
+    }
 }
